@@ -1,14 +1,12 @@
-// Funciones
-function aleatorio(min, max) {
-  return Math.random() * (max - min) + min;
-}
-function comprobar() {
-  if (numerousur==numaleatorio) {
-    devuelta="Has acertado"
-  } else {
-    devuelta="Vuelve a intentarlo"
-  }
-}
 // Variables
-var numaleatorio=Math.round(aleatorio(1,10))
-console.log(numaleatorio);
+var velocidades = [0,0,0];
+var vel1=document.getElementById("velocidad1");
+var vel2=document.getElementById("velocidad2");
+var vel3=document.getElementById("velocidad3");
+// Funciones
+function anadirvelocidades() {
+  velocidades[0]=velocidad1;
+  velocidades[1]=velocidad2;
+  velocidades[2]=velocidad3;
+}
+console.log(velocidades);
