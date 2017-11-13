@@ -12,7 +12,6 @@ for (var i = 0; i < adivinar.length; i++) {
     palabra0[i]='0';
 }
 for (var x = 0; x<adivinar.length || cont<=5; x++) {
-  cont++
   var letrauser =prompt("Dame letra");
   var acertado=false;
   for (var i = 0; i < adivinar.length; i++) {
@@ -20,7 +19,7 @@ for (var x = 0; x<adivinar.length || cont<=5; x++) {
       palabra0[i]=adivinar.charAt(i);
       acertado=true;
     } else {
-
+      cont++
     }
   }
   if (acertado==true) {
