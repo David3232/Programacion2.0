@@ -21,7 +21,7 @@ while (condicion) {
     var letra = prompt("Introduce un letra"," ");
   }
   }
-  if (i!=4) {
+  if (i=4) {
     alert("Felicidades");
   } else {
     alert("Se te acabaron las oportunidades");
