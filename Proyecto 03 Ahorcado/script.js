@@ -31,8 +31,7 @@ condicion2=true;
       acertado=true;
       aciertos++;
       console.log(aciertos);
-    } else {
-    }
+    } 
   }
   if (acertado==true) {
     alert("has acertado");
