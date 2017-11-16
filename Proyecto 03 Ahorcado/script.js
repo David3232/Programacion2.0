@@ -1,6 +1,7 @@
 //Variable
 var palabra0=[];
 var condicion=true;
+var condicion2=true;
 var intentos=0;
 var aciertos=0;
 // Array
@@ -13,7 +14,16 @@ for (var i = 0; i < adivinar.length; i++) {
     palabra0[i]='0';
 }
 while (intentos<5 && aciertos<adivinar.length) {
+condicion2=true;
   var letrauser =prompt("Dame letra");
+  while (condicion2) {
+      if (isNaN(letrauser)) {
+        condicion2=false;
+      } else {
+          var letrauser = prompt("Introduce un letra, no un numero"," ");
+          condicion=true;
+        }
+      }
   var acertado=false;
   for (var i = 0; i < adivinar.length; i++) {
     if (adivinar.charAt(i)==letrauser) {
@@ -27,7 +37,7 @@ while (intentos<5 && aciertos<adivinar.length) {
   if (acertado==true) {
     alert("has acertado");
   } else {
-    alert("no");
+    alert("letra no encontrada");
     intentos++;
   }
 }
