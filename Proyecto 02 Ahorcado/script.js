@@ -1,12 +1,12 @@
+// Sacar letra aleatoria
+function randomletter(min,max) {
+  return Math.random () * (max - min) + min;
+}
 // Variables
 var letra = prompt("Introduce un letra"," ");
 var letrarandom=String.fromCharCode(randomletter (97,122));
 var condicion=true
 var contador= 0;
-// Sacar letra aleatoria
-function randomletter(min,max) {
-  return Math.random () * (max - min) + min;
-}
 // Funcion de if
 console.log(letrarandom);
 while (condicion) {
@@ -15,13 +15,14 @@ while (condicion) {
   for (var i = 0; i < 4; i++) {
     if (letra == letrarandom) {
     alert("Acertado");
+    var win=true;
     i=4;
     } else {
     alert("No acertado");
     var letra = prompt("Introduce un letra"," ");
   }
   }
-  if (i=4) {
+  if (win) {
     alert("Felicidades");
   } else {
     alert("Se te acabaron las oportunidades");
