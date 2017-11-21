@@ -39,4 +39,9 @@ condicion=true;
     intentos++;
   }
 }
+if (aciertos>=adivinar.length) {
+  alert("Felicidades has acertado la palabra y es: "+adivinar)
+} else {
+  alert("No lo has conseguido...")
+}
 console.log(palabra0);
