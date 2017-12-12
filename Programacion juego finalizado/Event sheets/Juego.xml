@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Juego</name>
+    <events>
+        <variable constant="0" name="VidaHeroe" sid="541217215634805" static="0" type="number">3</variable>
+        <variable constant="0" name="Llavesencontradas" sid="691161292911837" static="0" type="number">0</variable>
+        <variable constant="0" name="Balas" sid="190414761802136" static="0" type="number">0</variable>
+        <variable constant="0" name="ZombieSpawned" sid="495020732984067" static="0" type="number">0</variable>
+        <variable constant="0" name="WAVETWO" sid="252832398704928" static="0" type="number">5</variable>
+        <variable constant="0" name="WAVEONE" sid="876557883685534" static="0" type="number">5</variable>
+        <event-block sid="723913133315535">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="460996502751566" type="System" />
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="460110428160759" type="Heroe">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="0" name="Set text" sid="559235632512491" type="Text2">
+                    <param id="0" name="Text">&quot;Vida restante : &quot; &amp; VidaHeroe</param>
+                </action>
+                <action id="-3" name="Set position" sid="279548524158720" type="Text2">
+                    <param id="0" name="X">Heroe.X-25</param>
+                    <param id="1" name="Y">Heroe.Y-50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="927738704917328">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="669189599915939" type="Heroe">
+                    <param id="0" name="Object">Ammo</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="375451092205356" type="Ammo" />
+                <action id="-10" name="Add to" sid="669748875237086" type="System">
+                    <param id="0" name="Variable">Balas</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="113703658990474">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="981261402280312" type="System" />
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="402686997285164" type="Zombie1">
+                    <param id="0" name="X">Heroe.X</param>
+                    <param id="1" name="Y">Heroe.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="130759247638245">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="249781529878258" type="System">
+                    <param id="0" name="First value">distance(Zombie1.X,Zombie1.Y,Heroe.X,Heroe.Y)</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">50</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="429241432928187">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="558080069348734" type="Zombie1">
+                            <param id="0" name="Object">Heroe</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="514765484912985">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="498342975780890" type="Zombie1">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">Heroe.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="156570201823826" type="Zombie1">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="956556117952586">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="230586125155650" type="Zombie1">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">Heroe.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="159782903019587" type="Zombie1">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="594716928643512">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="964982304736692" type="Zombie1">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Y co-ordinate">Heroe.Y</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="120607800565956" type="Zombie1">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="106119546942983">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="500305608901788" type="Zombie1">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Y co-ordinate">Heroe.Y</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="875417519346952" type="Zombie1">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="489627004133959">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="916459690297525" type="Bala">
+                    <param id="0" name="Object">Zombie1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="133630612706833" type="Zombie1">
+                    <param id="0" name="Instance variable">Healt</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="569073298895150" type="Zombie1">
+                    <param id="0" name="Object">Sangre</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action behavior="8Direction" id="1" name="Reverse" sid="318520467172279" type="Zombie1" />
+            </actions>
+        </event-block>
+        <event-block sid="921449669307504">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="996098534044345" type="System">
+                    <param id="0" name="Interval (seconds)">1.5</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="230532015877736" type="System">
+                    <param id="0" name="Variable">ZombieSpawned</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="363585903797188" type="System">
+                    <param id="0" name="Object to create">Zombie1</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">100</param>
+                    <param id="3" name="Y">371</param>
+                </action>
+                <action id="-3" name="Create object" sid="497850326799774" type="System">
+                    <param id="0" name="Object to create">Zombie1</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">509</param>
+                    <param id="3" name="Y">78</param>
+                </action>
+                <action id="-3" name="Create object" sid="402027429276527" type="System">
+                    <param id="0" name="Object to create">Zombie1</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">955</param>
+                    <param id="3" name="Y">78</param>
+                </action>
+                <action id="-3" name="Create object" sid="305190787524931" type="System">
+                    <param id="0" name="Object to create">Zombie1</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">1111</param>
+                    <param id="3" name="Y">651</param>
+                </action>
+                <action id="-3" name="Create object" sid="421286218443454" type="System">
+                    <param id="0" name="Object to create">Zombie1</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">985</param>
+                    <param id="3" name="Y">918</param>
+                </action>
+                <action id="-3" name="Create object" sid="158940116401865" type="System">
+                    <param id="0" name="Object to create">Zombie1</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">221</param>
+                    <param id="3" name="Y">907</param>
+                </action>
+                <action id="-10" name="Add to" sid="739562946766922" type="System">
+                    <param id="0" name="Variable">ZombieSpawned</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="437799758947601">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="672229356956567" type="Zombie1">
+                    <param id="0" name="Instance variable">Healt</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="998579716859678" type="Zombie1" />
+            </actions>
+        </event-block>
+        <event-block sid="507680211863298">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="411900234615100" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="265492909568861">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="833532840875323" type="System">
+                    <param id="0" name="Interval (seconds)">0.5</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="805599044586758" type="System">
+                    <param id="0" name="Variable">ZombieSpawned</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="187233066726767" type="System">
+                    <param id="0" name="Variable">ZombieSpawned</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="712311590358672">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="317124974470838" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="228418820670544" type="musica">
+                    <param id="0" name="Audio file">ambientmain_0</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="687925048275384">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="343227780488410" type="Zombie1" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="484708333503153" type="musica">
+                    <param id="0" name="Audio file">zombie-1</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="435137409895704">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="752288249033507" type="Zombie1">
+                    <param id="0" name="Object">Bala</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="409790574167678" type="musica">
+                    <param id="0" name="Audio file">qubodupPunch02</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="917795389063521">
+            <conditions>
+                <condition id="0" name="On click" sid="893159565293523" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="188793183380825" type="System">
+                    <param id="0" name="Variable">Balas</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="197534476315802" type="Heroe">
+                    <param id="0" name="Object">Bala</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="0" name="Play" sid="715605841318465" type="musica">
+                    <param id="0" name="Audio file">disparo_municion1</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-20</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="669352215133026">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="871312649082988" type="Heroe">
+                    <param id="0" name="Object">Llave</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="424966324502942" type="System">
+                    <param id="0" name="Variable">Llavesencontradas</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="238240543101457" type="Llave" />
+            </actions>
+        </event-block>
+        <event-block sid="162856823200895">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="411024778283145" type="System">
+                    <param id="0" name="Variable">Llavesencontradas</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="194771050921219" type="System">
+                    <param id="0" name="Layout">&quot;Fin bueno&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="975950677528081">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="227992253042016" type="Zombie1">
+                    <param id="0" name="Object">Heroe</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="798775074617658" type="System">
+                    <param id="0" name="Variable">VidaHeroe</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="223981460899643" type="Heroe">
+                    <param id="0" name="Object">Sangre</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="677015159600143">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="708389987921836" type="System">
+                    <param id="0" name="Variable">VidaHeroe</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="520340693561355" type="System">
+                    <param id="0" name="Layout">Fin malo</param>
+                </action>
+                <action id="-10" name="Add to" sid="244536394408664" type="System">
+                    <param id="0" name="Variable">VidaHeroe</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

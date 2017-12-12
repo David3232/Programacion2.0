@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>New project</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>1ff7j8ank0o3n</unique-id>
+    <saved-with-version>24400</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>854</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Fondo" sid="315107889073436">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\dafeca\Desktop\d8680c6363497.5721361e04dd8.jpg" />
+        </object-type>
+        <object-type name="Pared" sid="918344387942111">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="137095249189774">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="986552711555419" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.518519" original-source="C:\Users\dafeca\Desktop\Nueva carpeta\Captura.PNG" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Heroe" sid="808357729436697">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="ScrollTo" sid="614359364200530">
+                    <behavior id="scrollto" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="917878104658747">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="743938863426843" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501211" original-source="C:\Users\dafeca\Desktop\Nueva carpeta\source.gif">
+                        <image-point name="Imagepoint 1" x="0.831034" y="0.583535" />
+                        <collision-poly>
+                            <point x="0.674138" y="0.457627" />
+                            <point x="0.817241" y="0.571429" />
+                            <point x="0.739655" y="0.634383" />
+                            <point x="0.5" y="0.680387" />
+                            <point x="0.246552" y="0.653753" />
+                            <point x="0.324138" y="0.51816" />
+                            <point x="0.343103" y="0.326877" />
+                            <point x="0.5" y="0.305085" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Tunel" sid="880980321731238">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="934043132887772" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.509091" original-source="C:\Users\dafeca\Desktop\Nueva carpeta\Captura.PNG" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="695612524154909">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Bala" sid="802029548154908">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="447204317967660">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="574417785683285">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="910360139200820" speed="5">
+                    <frame duration="1" hotspotX="0.564" hotspotY="0.5" original-source="C:\Users\dafeca\Desktop\Nueva carpeta\bala gorda.png">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Explosion" sid="583642851937341">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="440073842060122" speed="5">
+                    <frame duration="1" hotspotX="0.501002" hotspotY="0.500816" original-source="C:\Users\dafeca\Desktop\Nueva carpeta\misc_fire_explosion_element_png_by_dbszabo1-d54jed4.png">
+                        <collision-poly>
+                            <point x="0.340681" y="0.277325" />
+                            <point x="0.498998" y="0.254486" />
+                            <point x="0.851703" y="0.499184" />
+                            <point x="0.767535" y="0.810767" />
+                            <point x="0.498998" y="0.831974" />
+                            <point x="0.234469" y="0.809135" />
+                            <point x="0.188377" y="0.499184" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Zombie1" sid="521986132059327">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Healt" sid="780111338196817" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="LineOfSight" sid="499123039704384">
+                    <behavior id="LOS" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="890206549593741">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="817262214621033" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dafeca\Desktop\Nueva carpeta\basicundead_12.png">
+                        <collision-poly>
+                            <point x="0.324219" y="0.675781" />
+                            <point x="0.257813" y="0.5" />
+                            <point x="0.339844" y="0.339844" />
+                            <point x="0.5" y="0.210938" />
+                            <point x="0.71875" y="0.28125" />
+                            <point x="0.589844" y="0.5" />
+                            <point x="0.652344" y="0.652344" />
+                            <point x="0.5" y="0.816406" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Function" sid="623788949751120">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="Sangre" sid="367567528617259">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="649380678017709">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="884504800387981" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dafeca\Desktop\Nueva carpeta\las-salpicaduras-de-sangre-de-una-herida-de-bala.png">
+                        <collision-poly>
+                            <point x="0.286517" y="0.286517" />
+                            <point x="0.5" y="0.219101" />
+                            <point x="0.741573" y="0.258427" />
+                            <point x="0.910112" y="0.5" />
+                            <point x="0.58427" y="0.58427" />
+                            <point x="0.5" y="0.640449" />
+                            <point x="0.269663" y="0.730337" />
+                            <point x="0.185393" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="musica" sid="910798830020033">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="ESCAPE" sid="202135820442074">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="556527021118849">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Ammo" sid="618033433883940">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="711311013231577" speed="5">
+                    <frame duration="1" hotspotX="0.500516" hotspotY="0.5" original-source="C:\Users\David\Desktop\Programacion juego\Alien_Power_Cell.png">
+                        <collision-poly>
+                            <point x="0.178535" y="0.28268" />
+                            <point x="0.794634" y="0.325163" />
+                            <point x="0.876161" y="0.5" />
+                            <point x="0.757482" y="0.616013" />
+                            <point x="0.499484" y="0.669935" />
+                            <point x="0.181631" y="0.712418" />
+                            <point x="0.125903" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Llave" sid="790991072249979">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="133897505359038" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\David\Desktop\Programacion juego\580b585b2edbce24c47b284d.png">
+                        <collision-poly>
+                            <point x="0.0689906" y="0.0689906" />
+                            <point x="0.5748" y="0.5" />
+                            <point x="0.890341" y="0.890341" />
+                            <point x="0.455338" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Iniciobck" sid="959132795947222">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\David\Desktop\Programacion juego\Zombies-walk-Toluca.jpg" />
+        </object-type>
+        <object-type name="FondoIn" sid="682338609152401">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="854031348885861" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501449" original-source="C:\Users\David\Desktop\Programacion juego\Zombies-walk-Toluca.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Inicio" sid="914339445572799">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="TextBox" sid="603748939172448">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="Name" sid="472301592556680">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="846037800542332" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502203" original-source="C:\Users\David\Desktop\Programacion juego\zombie escape web name.png">
+                        <collision-poly>
+                            <point x="0.06" y="0.317181" />
+                            <point x="0.958333" y="0.220264" />
+                            <point x="0.96" y="0.788546" />
+                            <point x="0.0608333" y="0.678414" />
+                            <point x="0.0775" y="0.497797" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Result2" sid="161519676118853">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="782704641324673" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503704" original-source="C:\Users\David\Desktop\Programacion juego\objetivo-conseguido-web-300x135.png">
+                        <collision-poly>
+                            <point x="0.15" y="0.333333" />
+                            <point x="0.5" y="0.192593" />
+                            <point x="0.846667" y="0.340741" />
+                            <point x="0.853333" y="0.496296" />
+                            <point x="0.846667" y="0.659259" />
+                            <point x="0.5" y="0.785185" />
+                            <point x="0.156667" y="0.651852" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Result1" sid="612938690920458">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="258419588287336" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\David\Desktop\Programacion juego\youaredead_icon.png">
+                        <collision-poly>
+                            <point x="0.148438" y="0.148438" />
+                            <point x="0.5" y="0.046875" />
+                            <point x="0.882813" y="0.117188" />
+                            <point x="0.921875" y="0.5" />
+                            <point x="0.890625" y="0.890625" />
+                            <point x="0.5" y="0.941406" />
+                            <point x="0.136719" y="0.863281" />
+                            <point x="0.0898438" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Text2" sid="333597110504669">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Pin" sid="396309626175619">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Juego.xml</layout>
+        <layout>Fin Bueno.xml</layout>
+        <layout>Fin malo.xml</layout>
+        <layout>Inicio.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Juego.xml</event-sheet>
+        <event-sheet>Fin bueno.xml</event-sheet>
+        <event-sheet>Fin malo.xml</event-sheet>
+        <event-sheet>Inicio.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="5" />
+        <global-instance type="Function" uid="51" />
+        <global-instance type="musica" uid="52">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder />
+    <music-folder>
+        <file name="ambientmain_0.ogg" />
+        <file name="zombie-1.ogg" />
+        <file name="disparo_municion1.ogg" />
+        <file name="qubodupPunch02.ogg" />
+    </music-folder>
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
