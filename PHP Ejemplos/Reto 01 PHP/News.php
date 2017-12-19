@@ -35,18 +35,18 @@ li a:hover:not(.active) {
 <?php $dondeEstamos="news" ?>
 <ul>
   <li>
-    <a class=<?php if ($dondeEstamos=="home") {echo "active";}else {echo "disabled";} ?> href="inicio.php">Home</a>
+    <a class="<?php if ($dondeEstamos=="home") {echo "active";} ?>" href="inicio.php">Home</a>
   </li>
 
   <li>
-    <a class=<?php if ($dondeEstamos=="news") {echo "active";}else {echo "disabled";} ?> href="news.php">News</a>
+    <a class="<?php if ($dondeEstamos=="news") {echo "active";} ?>" href="news.php">News</a>
   </li>
 
   <li>
-    <a class=<?php if ($dondeEstamos=="Contact") {echo "active";}else {echo "disabled";} ?> href="Contact.php">Contact</a>
+    <a class="<?php if ($dondeEstamos=="Contact") {echo "active";} ?>" href="Contact.php">Contact</a>
   </li>
   <li>
-    <a class=<?php if ($dondeEstamos=="About") {echo "active";}else {echo "disabled";} ?> href="About.php">About</a>
+    <a class="<?php if ($dondeEstamos=="About") {echo "active";} ?>" href="About.php">About</a>
 </li>
 </ul>
 
