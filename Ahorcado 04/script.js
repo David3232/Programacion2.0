@@ -1,5 +1,6 @@
 //Variable
 var palabra0=[];
+var letrasconseguidas=[];
 var condicion=true;
 var intentos=0;
 var aciertos=0;
@@ -20,11 +21,16 @@ function comprobar() {
     entradatxt = letrauser.value;
       if (isNaN(entradatxt)) {
         for (var i = 0; i < adivinar.length; i++) {
-          if (adivinar.charAt(i)==entradatxt) {
-            palabra0[i]=adivinar.charAt(i);
-            acertado=true;
-            aciertos++;
-        }
+          if (adivinar.charAt(i)==letrasconseguidas[i]) {
+          salida.value="Esta letra no es la que buscas";
+          } else {
+            if (adivinar.charAt(i)==entradatxt) {
+              palabra0[i]=adivinar.charAt(i);
+              acertado=true;
+              aciertos++;
+              letrasconseguidas[i]=adivinar.charAt(i);
+          }
+          }
         salida2.value=palabra0;
         if (aciertos>=adivinar.length) {
               salida2.value="Felicidades has acertado la palabra y es: "+adivinar
@@ -38,7 +44,7 @@ function comprobar() {
         if (acertado==true) {
               salida.value="Has acertado la letra";
         } else {
-              salida.value="No has acertado";
+              salida.value="Esta no es la letra que buscas";
               intentos++;
               salida3.value=salida3.value+entradatxt+"-";
         }
