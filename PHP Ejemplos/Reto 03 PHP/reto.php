@@ -10,7 +10,7 @@
       if ($conector->connect_errno) {
         echo "Fallo al conectar a MySQL: " . $conector->connect_error;
       }
-     $resultado = $conector->query("SELECT * FROM country order by surfacearea desc");
+     $resultado = $conector->query("SELECT * FROM country WHERE country.Continent = 'South America' ORDER BY country.SurfaceArea DESC");
      foreach ($resultado as $fila) {
       	echo "El pais es ".$fila['Name']." y su superficie es de ".$fila['SurfaceArea']."<br>";
     	}
