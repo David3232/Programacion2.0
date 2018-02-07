@@ -12,6 +12,6 @@
     <div id="myfirstchart" style="height: 250px;"></div>
 
     </div>
-    <script src="Pagina1.js" charset="utf-8"></script>
+    <script src="Pagina1(js).php" charset="utf-8"></script>
   </body>
 </html>
