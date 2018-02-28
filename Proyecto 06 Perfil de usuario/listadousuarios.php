@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="css.css">
+    <?php
+    $conector = new mysqli("localhost", "root", "", "juegos");
+      if ($conector->connect_errno) {
+        echo "Fallo al conectar a MySQL: " . $conector->connect_error;
+      } else {
+        $id=$_GET['id'];
+        $nombre=$_POST['nombre'];
+        $apellidos=$_POST['apellidos'];
+        $edad=$_POST['edad'];
+        $curso=$_POST['curso'];
+        $puntuacion=$_POST['puntuacion'];
+        $consultainstert="INSERT INTO usuarios (nombre,apellidos,edad,curso,puntuacion) values ('$nombre','$apellidos',$edad,$curso,$puntuacion)";
+        $consultaupdate="UPDATE usuarios set nombre='$nombre', apellidos='$apellidos', edad=$edad, curso=$curso, puntuacion=$puntuacion where id=$id";
+      $insertacion = $conector->query($consulta);
+     $resultado = $conector->query("SELECT * FROM usuarios");
+
+     foreach ($resultado as $fila) {
+        echo "<strong>Usuario</strong> ".$fila['id']."<br>"."<strong>Nombre: </strong>".$fila['nombre']."<br>"."<strong>Apellidos: </strong>".$fila['apellidos']."<br>"."<strong>Edad: </strong>".$fila['edad']."<br>"."<strong>Curso: </strong>".$fila['curso']."<br>"."<strong>Puntuacion: </strong>".$fila['puntuacion']."<br>";
+        echo "<a href='insertarusuario.php?id='".$fila['id'].">Actualizar</a> <br> <br>";
+      }
+    }
+     ?>
+  </body>
+</html>
