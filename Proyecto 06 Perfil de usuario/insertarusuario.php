@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-    <form class="" action="listadousuarios.php" method="post">
+    <form action="listadousuarios.php" method="post">
       <input type="text" name="nombre" value="nombre">
       <input type="text" name="apellidos" value="apellidos">
       <input type="text" name="edad" value="edad">
