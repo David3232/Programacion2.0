@@ -6,6 +6,7 @@
   </head>
   <body>
     <link rel="stylesheet" href="css.css">
+    <a href="insertarusuario.php">INSERTAR USUARIO NUEVO</a>
     <?php
     $conector = new mysqli("localhost", "root", "", "juegos");
       if ($conector->connect_errno) {
