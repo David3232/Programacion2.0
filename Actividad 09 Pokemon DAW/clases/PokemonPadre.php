@@ -4,9 +4,9 @@
  */
 class PokemonPadre
 {
-    private $tipo = "Hada";
-    private $nombre = "Sance";
-    private $ataque = "Rayo de amor";
+    private $tipo = "";
+    private $nombre = "";
+    private $ataque = "";
     private $nivelmax = 100;
     private $poder = 0;
     function __construct()

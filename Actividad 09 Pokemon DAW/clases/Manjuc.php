@@ -9,10 +9,11 @@ class Manjuc extends PokemonPadre
 
   }
 
-  function hambre()
+  public function hambre()
   {
     $hambre = rand(0,50);
     $this->acierto = $this->acierto - $hambre;
+    return $this->acierto;
   }
   public function getAcierto()
   {

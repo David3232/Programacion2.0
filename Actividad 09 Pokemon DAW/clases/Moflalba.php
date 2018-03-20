@@ -1,7 +1,5 @@
 <?php
-/**
- *
- */
+include 'clases/PokemonPadre.php';
 class Moflalba extends PokemonPadre
 {
   private $autodestruccion = 50;
@@ -10,9 +8,9 @@ class Moflalba extends PokemonPadre
 $this->autodestruccion();
   }
 
-  function autodestruccion ()
+  public function autodestruccion ()
   {
-    $this->autodestruccion = rand(0,25)
+    $this->autodestruccion = rand(0,25);
   }
   public function getAutodestruccion()
   {
