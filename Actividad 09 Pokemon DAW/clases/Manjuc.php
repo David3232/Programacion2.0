@@ -1,5 +1,5 @@
 <?php
-include 'clases/PokemonPadre.php';
+include_once 'clases/PokemonPadre.php';
 class Manjuc extends PokemonPadre
 {
   private $acierto=100;

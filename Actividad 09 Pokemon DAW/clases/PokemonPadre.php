@@ -1,7 +1,4 @@
 <?php
-/**
- *
- */
 class PokemonPadre
 {
     private $tipo = "";
@@ -55,7 +52,7 @@ class PokemonPadre
     }
     public function poder(){
       $this->poder = rand(50,100);
-      return $this;
+      return $this->poder;
     }
 }
 

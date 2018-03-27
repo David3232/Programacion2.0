@@ -1,5 +1,5 @@
 <?php
-include 'clases/PokemonPadre.php';
+include_once 'clases/PokemonPadre.php';
 class Jaumerex extends PokemonPadre
 {
   private $hiperactividad = 0;
@@ -10,7 +10,8 @@ class Jaumerex extends PokemonPadre
 
   public function hiperactividad()
   {
-    $this->hiperactividad = rand(25,75)
+    $this->hiperactividad = rand(25,75);
+    return $this->hiperactividad;
   }
   public function getHiperactividad()
   {

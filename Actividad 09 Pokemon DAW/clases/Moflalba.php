@@ -1,5 +1,5 @@
 <?php
-include 'clases/PokemonPadre.php';
+include_once 'clases/PokemonPadre.php';
 class Moflalba extends PokemonPadre
 {
   private $autodestruccion = 50;
