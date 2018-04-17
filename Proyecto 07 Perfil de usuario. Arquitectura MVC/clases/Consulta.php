@@ -1,5 +1,5 @@
 <?php
-require_once 'InteraccionBBDD';
+require_once 'clases/InteraccionBBDD';
 /**
  *
  */
@@ -13,11 +13,11 @@ class Consulta
     $this->conector=$this->database->getConector();
   }
   public function validar(){
-   if (empty($_POST['nombre']) || empty($_POST['apellidos']) || empty($_POST['edad']) || empty($_POST['curso']) || empty($_POST['puntuacion']) ) {
+   if (empty($nombre) || empty($apellidos) || empty($edad) || empty($curso) || empty($puntuacion) ) {
      echo "<br>No dejes vacio ningun campo<br>";
      echo "<a href='insertarusuario.php'>Por favor vuelve a resgistrarte, gracias</a></p><br><br><br>";
    } else {
-     $jugador = "SELECT * FROM usuarios WHERE nombre = '$_POST[nombre]'";
+     $jugador = "SELECT * FROM usuarios WHERE nombre = '$nombre'";
       $comprobarJugador = $this->conector->query($jugador);
       $contar = mysqli_num_rows($comprobarJugador);
 
@@ -31,9 +31,21 @@ class Consulta
   }
   public function insertar()
     {
-   $registro = "INSERT INTO usuarios (nombre, apellidos, edad, curso, puntuacion, correo) VALUES ('$_POST[nombre]', '$_POST[apellidos]', '$_POST[edad]','$_POST[curso]', '$_POST[puntuacion]')";
+   $registro = "INSERT INTO usuarios (nombre,apellidos,edad,curso,puntuacion) values ('$nombre','$apellidos',$edad,$curso,$puntuacion)";
    if ($this->conector->query($registro) === TRUE) {
      echo "<br><br><h1 align = center>Usuario creado correctamente</h1><br><br><br>";
     }
   }
+  public function actualizar()
+  {
+    $actualizar = "UPDATE usuarios set nombre='$nombre', apellidos='$apellidos', edad=$edad, curso=$curso, puntuacion=$puntuacion where id=$id";
+    if ($this->conector->query($registro) === TRUE) {
+      echo "<br><br><h1 align = center>Usuario actualizado correctamente</h1><br><br><br>";
+     }
+  }
+  public function borrar()
+  {
+
+  }
+}
  ?>

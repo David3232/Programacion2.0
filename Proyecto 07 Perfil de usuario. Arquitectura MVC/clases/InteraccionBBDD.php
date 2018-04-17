@@ -1,7 +1,7 @@
 <?php
 class InteraccionBBDD
 {
-  private $host = "localhost"
+  private $host = "localhost";
   private $username = "root";
   private $password = "";
   private $database = "juegos";
