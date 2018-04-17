@@ -1,29 +1,37 @@
 <?php
+require_once ('config.php');
+/**
+ *
+ */
 class InteraccionBBDD
 {
-  private $host = "localhost";
-  private $username = "root";
-  private $password = "";
-  private $database = "juegos";
+  //Propiedades de conexion
+  private $server="";
+  private $user="";
+  private $pass="";
+  private $bd="";
 
+  private $usuario="";
   private $nombre="";
   private $apellidos="";
   private $edad=0;
   private $curso="";
-  private $puntuacion="";
 
+  //Propiedad conector
   private $conector;
+
   function __construct()
   {
-      global $config;
-      $this->host=$config["host"];
-      $this->username=$config["username"];
-      $this->password=$config["password"];
-      $this->database=$config["database"];
+    global $config;
+    $this->server=$config["host"];
+    $this->user=$config["user"];
+    $this->pass=$config["pass"];
+    $this->bd=$config["bd"];
   }
-  function conectar()
-  {
-    $conectorTmp = new mysqli ($this->server, $this->username, $this->password, $this->database);
+
+  public function conectar(){
+    $conectorTmp = new mysqli ($this->server,$this->user,
+                                  $this->pass,$this->bd) ;
     if ($conectorTmp->connect_errno) {
       $this->conector=false;
     }else{
@@ -33,97 +41,121 @@ class InteraccionBBDD
 
 
     /**
-     * Get the value of Host
+     * Get the value of Server
      *
      * @return mixed
      */
-    public function getHost()
+    public function getServer()
     {
-        return $this->host;
+        return $this->server;
     }
 
     /**
-     * Set the value of Host
+     * Set the value of Server
      *
-     * @param mixed host
+     * @param mixed server
      *
      * @return self
      */
-    public function setHost($host)
+    public function setServer($server)
     {
-        $this->host = $host;
+        $this->server = $server;
 
         return $this;
     }
 
     /**
-     * Get the value of Username
+     * Get the value of User
      *
      * @return mixed
      */
-    public function getUsername()
+    public function getUser()
     {
-        return $this->username;
+        return $this->user;
     }
 
     /**
-     * Set the value of Username
+     * Set the value of User
      *
-     * @param mixed username
+     * @param mixed user
      *
      * @return self
      */
-    public function setUsername($username)
+    public function setUser($user)
     {
-        $this->username = $username;
+        $this->user = $user;
 
         return $this;
     }
 
     /**
-     * Get the value of Password
+     * Get the value of Pass
      *
      * @return mixed
      */
-    public function getPassword()
+    public function getPass()
     {
-        return $this->password;
+        return $this->pass;
     }
 
     /**
-     * Set the value of Password
+     * Set the value of Pass
      *
-     * @param mixed password
+     * @param mixed pass
      *
      * @return self
      */
-    public function setPassword($password)
+    public function setPass($pass)
     {
-        $this->password = $password;
+        $this->pass = $pass;
 
         return $this;
     }
 
     /**
-     * Get the value of Database
+     * Get the value of Db
      *
      * @return mixed
      */
-    public function getDatabase()
+    public function getbd()
     {
-        return $this->database;
+        return $this->bd;
     }
 
     /**
-     * Set the value of Database
+     * Set the value of Db
      *
-     * @param mixed database
+     * @param mixed db
      *
      * @return self
      */
-    public function setDatabase($database)
+    public function setDb($bd)
     {
-        $this->database = $database;
+        $this->db = $bd;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Usuario
+     *
+     * @return mixed
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+
+    /**
+     * Set the value of Usuario
+     *
+     * @param mixed usuario
+     *
+     * @return self
+     */
+    public function setUsuario($usuario)
+    {
+        $this->usuario = $usuario;
 
         return $this;
     }
@@ -225,30 +257,6 @@ class InteraccionBBDD
     }
 
     /**
-     * Get the value of Puntuacion
-     *
-     * @return mixed
-     */
-    public function getPuntuacion()
-    {
-        return $this->puntuacion;
-    }
-
-    /**
-     * Set the value of Puntuacion
-     *
-     * @param mixed puntuacion
-     *
-     * @return self
-     */
-    public function setPuntuacion($puntuacion)
-    {
-        $this->puntuacion = $puntuacion;
-
-        return $this;
-    }
-
-    /**
      * Get the value of Conector
      *
      * @return mixed
@@ -273,4 +281,5 @@ class InteraccionBBDD
     }
 
 }
+
  ?>
