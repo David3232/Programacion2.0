@@ -3,16 +3,15 @@ require_once "InteraccionBBDD.php";
 /**
  *
  */
-class Consulta
+class Consulta extends InteraccionBBDD
 {
     private $bd;
     private $conector;
 
     function __construct()
     {
-      $this->bd = new InteraccionBBDD();
       $this->bd->conectar();
-      $this->conector=$this->bd->getConector();
+      $this->conector=parent:getConector();
     }
   public function lista()
     {
@@ -23,10 +22,20 @@ class Consulta
          echo "<a href='BorrarUsuario.php?id=".$fila['id']."'> Borrar</a> <br> <br>";
        }
     }
-  public function insertar()
+  public function insertar($nombre, $apellidos, $edad, $curso, $puntuacion)
   {
     $insertar = "INSERT INTO usuarios (nombre,apellidos,edad,curso,puntuacion) values ('$nombre','$apellidos',$edad,$curso,$puntuacion)";
-    $registro = $this->conector->query($insertar);
+    $registroinsertar = $this->conector->query($insertar);
+  }
+  public function actualizar($id, $nombre, $apellidos, $edad, $curso, $puntuacion)
+  {
+    $actualizar = "UPDATE usuarios set id=$id, nombre='$nombre', apellidos='$apellidos', edad=$edad, curso=$curso, puntuacion=$puntuacion where id=$id";
+    $registroactualizar = $this->conector->query($actualizar);
+  }
+  public function borrar($id)
+  {
+    $borrar = "DELETE from usuarios where id=$id";
+    $registroborrar = $this->conector->query($borrar);
   }
 }
  ?>

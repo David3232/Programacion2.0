@@ -13,6 +13,7 @@
       <input type="text" id="curso" name="curso" value="curso">
       <input type="text" id="puntuacion" name="puntuacion" value="puntuacion">
       <input type="submit" name="Enviar" value="Enviar">
+      <input type="hidden" id="insertar" name="insertar" value="insertar">
     </form>
   </body>
 </html>

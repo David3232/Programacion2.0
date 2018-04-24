@@ -1,4 +1,3 @@
-
 var cantidad = "";
 var numeroaleatorio = Math.floor(Math.random() * (19 - 10)) + 10;
 
