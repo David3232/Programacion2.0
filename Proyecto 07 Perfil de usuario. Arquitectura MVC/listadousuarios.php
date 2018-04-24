@@ -10,7 +10,6 @@
     <br>
     <?php
     require_once 'Consulta.php';
-    require_once 'InteraccionBBDD.php';
     if (isset($_POST['insertar'])) {
       $insertarpost=$_POST['insertar'];
     } elseif (isset($_POST['actualizar'])) {
@@ -21,8 +20,6 @@
       $actualizarpost="";
     }
     $consulta = new Consulta();
-    $bd = new InteraccionBBDD();
-    $bd->conectar();
     if ($insertarpost == "insertar") {
       $nombre=$_POST['nombre'];
       $apellidos=$_POST['apellidos'];

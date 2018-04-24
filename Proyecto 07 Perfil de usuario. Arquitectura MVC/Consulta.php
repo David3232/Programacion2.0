@@ -10,8 +10,9 @@ class Consulta extends InteraccionBBDD
 
     function __construct()
     {
-      $this->bd->conectar();
-      $this->conector=parent:getConector();
+      parent::__construct();
+      parent::conectar();
+      $this->conector=parent::getConector();
     }
   public function lista()
     {
