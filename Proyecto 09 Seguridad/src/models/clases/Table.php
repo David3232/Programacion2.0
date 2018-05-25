@@ -1,6 +1,6 @@
 <?php
 namespace Daw\models\clases;
-use Daw\models\classes\Db;
+use Daw\models\clases\Db;
 
 
 class Table extends Db
