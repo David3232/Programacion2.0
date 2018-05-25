@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__.'/../../vendor/autoload.php';
-use Daw\models\classes\Usuario;
+use Daw\models\clases\Usuario;
 
     if(isset($_POST["borrar"])){
       $usuario=new Usuario();

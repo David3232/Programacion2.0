@@ -11,14 +11,6 @@
   </head>
   <body>
     <h1>AHORCADO</h1>
-    <?php
-      $selectOption = $_POST["usuario"];
-      $usuario=explode("-", $selectOption);
-      $session= new Session($usuario[0]);
-     ?>
-
-
-
      <h2> Usuario <?php echo  $session->getUsuario()." puntuación de: ".$usuario[1]." puntos"?></h2>
      <br><br><br>
      <a href="index.php">

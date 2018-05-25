@@ -1,5 +1,5 @@
 <?php
-namespace Daw\models\classes;
+namespace Daw\models\clases;
 use Daw\config\Config;
 use Mysqli;
 

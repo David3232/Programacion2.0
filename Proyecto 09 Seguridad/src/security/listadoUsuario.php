@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__.'/../../vendor/autoload.php';
-use Daw\models\classes\Usuario;
+use Daw\models\clases\Usuario;
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +19,8 @@ use Daw\models\classes\Usuario;
     </style>
   </head>
   <body>
-    
-  
+
+
       <h3>USUARIOS BASE DE DATOS:</h3>
           <?php
 

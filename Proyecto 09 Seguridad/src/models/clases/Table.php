@@ -1,8 +1,8 @@
 <?php
-namespace Daw\models\classes;
+namespace Daw\models\clases;
 use Daw\models\classes\Db;
 
- 
+
 class Table extends Db
 {
 

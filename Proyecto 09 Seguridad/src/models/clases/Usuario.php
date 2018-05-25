@@ -1,5 +1,5 @@
 <?php
-namespace Daw\models\classes;
+namespace Daw\models\clases;
 use Daw\models\classes\Table;
 
 class Usuario extends Table
