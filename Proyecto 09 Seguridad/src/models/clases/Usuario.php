@@ -1,6 +1,6 @@
 <?php
 namespace Daw\models\clases;
-use Daw\models\classes\Table;
+use Daw\models\clases\Table;
 
 class Usuario extends Table
 {
